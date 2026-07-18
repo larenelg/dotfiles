@@ -5,25 +5,44 @@ My personal dotfiles for setting up and maintaining a Mac. It automates installi
 ## Fresh macOS setup
 
 1. Update macOS to the latest version.
-2. Set up an SSH key — either via the [1Password SSH agent](https://developer.1password.com/docs/ssh/get-started/#step-3-turn-on-the-1password-ssh-agent), or by generating one:
+2. **Install the Xcode Command Line Tools first** — git comes from them, so without this step step 4 just triggers the installer instead of cloning:
+
+   ```zsh
+   xcode-select --install
+   ```
+
+   Wait for the dialog to finish (~2 GB), then confirm:
+
+   ```zsh
+   xcode-select -p   # → /Library/Developer/CommandLineTools
+   git --version
+   ```
+
+3. Set up an SSH key — either via the [1Password SSH agent](https://developer.1password.com/docs/ssh/get-started/#step-3-turn-on-the-1password-ssh-agent), or by generating one:
 
    ```zsh
    curl https://raw.githubusercontent.com/larenelg/dotfiles/HEAD/ssh.sh | sh -s "<your-email-address>"
    ```
 
-3. Clone this repo to `~/.dotfiles`:
+   Check it works before continuing — this must print your username:
+
+   ```zsh
+   ssh -T git@github.com
+   ```
+
+4. Clone this repo to `~/.dotfiles`:
 
    ```zsh
    git clone git@github.com:larenelg/dotfiles.git ~/.dotfiles
    ```
 
-4. Run the install:
+5. Run the install:
 
    ```zsh
    cd ~/.dotfiles && ./fresh.sh
    ```
 
-5. Restart to finalise.
+6. Restart to finalise.
 
 `fresh.sh` is safe to re-run — Homebrew skips anything already installed, and the rest is idempotent.
 
