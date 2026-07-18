@@ -814,6 +814,9 @@ defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 # Kill affected applications                                                  #
 ###############################################################################
 
+# Note: "Terminal" (and iTerm/WezTerm) are deliberately NOT in this list.
+# fresh.sh runs this script with `source`, so killing the terminal would kill
+# the shell mid-run. Restart your terminal manually to pick up its settings.
 for app in "Activity Monitor" \
     "Address Book" \
     "Calendar" \
@@ -827,8 +830,8 @@ for app in "Activity Monitor" \
     "Photos" \
     "Safari" \
     "SystemUIServer" \
-    "Terminal" \
     "iCal"; do
     killall "${app}" &> /dev/null
 done
-echo "Done. Note that some of these changes require a logout/restart to take effect."
+echo "Done. Some changes need a logout/restart to take effect."
+echo "Restart your terminal to pick up its settings."
