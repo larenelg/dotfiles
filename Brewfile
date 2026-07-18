@@ -91,12 +91,15 @@ vscode 'esbenp.prettier-vscode'               # Prettier formatter
 vscode 'mechatroner.rainbow-csv'              # CSV column highlighting
 vscode 'ms-azuretools.vscode-containers'      # Dev container tooling
 vscode 'ms-azuretools.vscode-docker'          # Docker support
-vscode 'ms-dotnettools.csdevkit'              # C# Dev Kit
-vscode 'ms-dotnettools.csharp'                # C# language support
-vscode 'ms-dotnettools.vscode-dotnet-runtime' # .NET runtime installer
-vscode 'ms-python.debugpy'                    # Python debugger
-vscode 'ms-python.python'                     # Python language support
-vscode 'ms-python.vscode-pylance'             # Python IntelliSense (Pylance)
+vscode 'ms-dotnettools.csdevkit'              # C# Dev Kit — pulls in csharp and
+                                              # vscode-dotnet-runtime; same race
+                                              # risk if listed separately.
+vscode 'ms-python.python'                     # Python — pulls in pylance, debugpy
+                                              # and python-envs as dependencies.
+                                              # Don't list those separately: brew
+                                              # bundle installs each in its own
+                                              # `code` process and they race,
+                                              # failing with ENOTEMPTY.
 vscode 'ms-vscode-remote.remote-containers'   # Remote - Containers
 vscode 'tomoki1207.pdf'                       # In-editor PDF viewer
 vscode 'vue.volar'                            # Vue language support
