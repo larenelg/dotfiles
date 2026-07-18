@@ -18,7 +18,7 @@ brew 'yarn'         # JS package manager
 
 # Apps
 cask '1password'          # Password manager
-brew '1password-cli'      # 1Password CLI (`op`) — used by the SSH agent / scripts
+cask '1password-cli'      # 1Password CLI (`op`) — used by the SSH agent / scripts
 cask 'antigravity-cli'    # Google's Antigravity agent CLI (Gemini) — https://antigravity.google/
 #cask 'caffeine'           # Menu-bar toggle to keep the Mac awake — https://intelliscapesolutions.com/apps/caffeine
 cask 'chatgpt'            # OpenAI ChatGPT desktop app
