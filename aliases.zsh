@@ -11,7 +11,7 @@ alias version="commit 'version'"
 # Directories
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
-alias projects="cd $HOME/Code"
+alias projects="cd $HOME/dev"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"

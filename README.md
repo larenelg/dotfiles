@@ -34,7 +34,7 @@ My personal dotfiles for setting up and maintaining a Mac. It automates installi
 - **`.zshrc`** — Oh My Zsh config and shell setup.
 - **`aliases.zsh`** / **`path.zsh`** — custom aliases and `$PATH` (loaded via `$ZSH_CUSTOM`).
 - **`.macos`** — macOS system defaults.
-- **`clone.sh`** — clones my own repos into `~/Code`.
+- **`clone.sh`** — clones my own repos into `~/dev`.
 - **`ssh.sh`** — generates an SSH key (fallback when not using the 1Password agent).
 
 To customise: adjust the `Brewfile` for the apps you want, tweak `.macos` to taste, and add aliases in `aliases.zsh`.

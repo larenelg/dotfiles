@@ -35,7 +35,7 @@ brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
 # Create a projects directory
-mkdir -p $HOME/Code
+mkdir -p $HOME/dev
 
 # Clone Github repositories
 ./clone.sh
