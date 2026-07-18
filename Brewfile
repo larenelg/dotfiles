@@ -47,6 +47,7 @@ cask 'imageoptim'         # Lossless image compression — https://imageoptim.co
 cask 'slack'              # Team chat
 #cask 'tableplus'          # GUI for relational databases [PAID] — https://tableplus.com/
 #cask 'telegram-desktop'   # Telegram messenger
+cask 'tailscale-app'      # Mesh VPN menu-bar app — how I remote into the mini
 cask 'the-unarchiver'     # Unpacks archive formats
 #cask 'transmit'           # Panic's file-transfer app (S3/FTP/etc.) [PAID] — https://panic.com/transmit/
 #cask 'tunnelbear'         # VPN client [SUBSCRIPTION] — https://www.tunnelbear.com/
