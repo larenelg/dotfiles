@@ -10,9 +10,11 @@ else
   echo "Xcode Command Line Tools already installed."
 fi
 
-# Check for Oh My Zsh and install if we don't have it
-if test ! $(which omz); then
-  /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
+# Check for Oh My Zsh and install if we don't have it.
+# --unattended stops the installer from running `exec zsh` at the end, which
+# would replace this shell and abandon the rest of the script.
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)" "" --unattended
 fi
 
 # Check for Homebrew and install if we don't have it
@@ -31,7 +33,8 @@ ln -sw $HOME/.dotfiles/.zshrc $HOME/.zshrc
 brew update
 
 # Install all our dependencies with bundle (See Brewfile)
-brew tap homebrew/bundle
+# No `brew tap homebrew/bundle` — that tap is deprecated and empty; bundle is
+# built into Homebrew now.
 brew bundle --file ./Brewfile
 
 # Create a projects directory
