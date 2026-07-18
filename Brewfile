@@ -56,9 +56,9 @@ cask 'visual-studio-code' # Code editor
 cask 'zoom'               # Video calls
 
 # Mac App Store
-mas 'Keynote', id: 409183694    # Apple presentations (free)
+mas 'Keynote', id: 361285480    # Apple presentations (free)
 #mas 'MyWoosh', id: 1498889644   # Indoor cycling / virtual training — https://www.mywhoosh.com/
-mas 'Numbers', id: 409203825    # Apple spreadsheets (free)
+mas 'Numbers', id: 361304891    # Apple spreadsheets (free)
 #mas 'Speedtest', id: 1153157709 # Ookla internet speed test (free)
 
 # =============================================================================
