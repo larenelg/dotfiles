@@ -35,7 +35,12 @@ brew update
 # Install all our dependencies with bundle (See Brewfile)
 # No `brew tap homebrew/bundle` — that tap is deprecated and empty; bundle is
 # built into Homebrew now.
-brew bundle --file ./Brewfile
+#
+# --jobs 1 forces sequential installs. In parallel, formulae that share
+# dependencies fight over the same download-cache and Cellar locks:
+#   "A `brew install --formula node` process has already locked ..."
+# which fails the install outright (poppler died this way on pkgconf).
+brew bundle --file ./Brewfile --jobs 1
 
 # Create a projects directory
 mkdir -p $HOME/dev

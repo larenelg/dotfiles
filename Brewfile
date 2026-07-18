@@ -10,7 +10,10 @@ brew 'grep'         # GNU grep (newer than macOS's)
 brew 'httpie'       # Friendly curl replacement (CLI HTTP client) — https://httpie.io/
 brew 'jq'           # Command-line JSON processor
 brew 'mas'          # Mac App Store CLI (used by the `mas` lines below)
-brew 'pkg-config'   # Helper for compiling from source
+brew 'node'         # Node + npm — listed explicitly so npm exists before the
+                    # `npm` entries below run (it would otherwise only arrive
+                    # as a dependency of yarn, with no ordering guarantee)
+brew 'pkg-config'   # Helper for compiling from source (alias for pkgconf)
 
 # Development
 brew 'imagemagick'  # Image manipulation from the CLI
@@ -106,7 +109,9 @@ vscode 'vue.volar'                            # Vue language support
 
 # npm globals
 npm '@tobilu/qmd'   # Local semantic search over notes (qmd)
-npm 'corepack'      # Node package-manager manager (yarn/pnpm shims)
+# npm 'corepack'    # Conflicts with brew 'yarn' — corepack writes its own yarn
+                    # shim to /opt/homebrew/bin/yarn and fails with EEXIST.
+                    # Also ships with Node already, so it's redundant here.
 
 # =============================================================================
 # Apps found installed on the MacBook Air (2026-07-18) — review and prune.
