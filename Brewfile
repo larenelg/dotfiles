@@ -14,6 +14,7 @@ brew 'node'         # Node + npm — listed explicitly so npm exists before the
                     # `npm` entries below run (it would otherwise only arrive
                     # as a dependency of yarn, with no ordering guarantee)
 brew 'pkg-config'   # Helper for compiling from source (alias for pkgconf)
+brew 'tmux'         # Persistent terminal sessions — survives SSH disconnects
 
 # Development
 brew 'imagemagick'  # Image manipulation from the CLI

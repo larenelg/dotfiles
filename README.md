@@ -53,6 +53,7 @@ My personal dotfiles for setting up and maintaining a Mac. It automates installi
 - **`.zshrc`** — Oh My Zsh config and shell setup.
 - **`aliases.zsh`** / **`path.zsh`** — custom aliases and `$PATH` (loaded via `$ZSH_CUSTOM`).
 - **`.macos`** — macOS system defaults.
+- **`.tmux.conf`** — tmux config; `set-clipboard on` lets OSC 52 reach the local clipboard over SSH.
 - **`clone.sh`** — clones my own repos into `~/dev`.
 - **`ssh.sh`** — generates an SSH key (fallback when not using the 1Password agent).
 

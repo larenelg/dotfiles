@@ -29,6 +29,10 @@ fi
 rm -rf $HOME/.zshrc
 ln -sw $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
+# Same for tmux
+rm -rf $HOME/.tmux.conf
+ln -sw $HOME/.dotfiles/.tmux.conf $HOME/.tmux.conf
+
 # Update Homebrew recipes
 brew update
 

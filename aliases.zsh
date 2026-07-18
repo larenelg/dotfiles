@@ -12,6 +12,19 @@ alias version="commit 'version'"
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 alias projects="cd $HOME/dev"
+alias vault="cd $HOME/Obsidian/Personal"
+
+# Remote — the Mac mini is the primary machine, the Air is a window into it.
+# -t forces a TTY (Claude Code's interactive UI needs one).
+# `tmux new -A` attaches to the session or creates it, so a dropped SSH
+# connection never kills a running job.
+alias mini="ssh -t larenes-mac-mini 'tmux new -A -s main'"
+alias minivault="ssh -t larenes-mac-mini 'cd ~/Obsidian/Personal && tmux new -A -s vault'"
+
+# Copy stdin to the LOCAL clipboard, even over SSH (OSC 52). pbcopy would
+# target the remote pasteboard, which is unreachable from here.
+# Needs `set -g set-clipboard on` in .tmux.conf when running inside tmux.
+clip() { printf "\033]52;c;%s\a" "$(base64 | tr -d '\n')"; }
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
